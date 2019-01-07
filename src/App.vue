@@ -20,6 +20,7 @@
 }
 #nav {
   padding: 10px;
+  border-bottom: 1px solid #141e50;
 }
 
 #nav a {
