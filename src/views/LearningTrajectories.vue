@@ -1,8 +1,8 @@
 <template>
-  <el-row type="flex" class="row-bg" justify="center">
-    <el-col :span="8" v-for="trajectory in trajectories">
+  <el-row class="row-bg" justify="center">
+    <el-col :span="24" v-for="trajectory in data.learningTrajectories">
       <div class="grid-content bg-purple">
-        <LearningTrajectory>
+        <LearningTrajectory :trajectory="trajectory">
         </LearningTrajectory>
       </div>
     </el-col>
@@ -11,19 +11,20 @@
 
 <script>
 import LearningTrajectory from '@/components/LearningTrajectory.vue'
+import seraphinAcademyData from '@/seraphinAcademyData.json'
 
 export default {
   components: {
     LearningTrajectory
   },
+  props: ['trajectory'],
   data() {
     return {
-      trajectories: [
-        { name: "The Digital Marketeer directory", difficulty: 6, number_of_badges: 12},
-        { name: "The Ruby on Rails and Production ready directory", difficulty: 8, number_of_badges: 14},
-        { name: "The Web Architecture and API directory", difficulty: 7, number_of_badges: 14}
-      ]
+      data: seraphinAcademyData
     }
   }
 }
 </script>
+
+<style="scoped">
+</style>

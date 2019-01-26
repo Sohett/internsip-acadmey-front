@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'Home Page'
+  name: 'HomePage'
 }
 </script>
 
