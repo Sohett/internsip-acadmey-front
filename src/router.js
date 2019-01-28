@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import About from './views/About.vue'
+import Admin from './views/Admin.vue'
 import LearningTrajectories from './views/LearningTrajectories.vue'
 
 import { requireAuth } from '@/services/auth'
@@ -22,15 +22,15 @@ export default new Router({
       redirect: '/'
     },
     {
-      path: '/learning-trajectories',
-      name: 'learningTrajectories',
+      path: '/learning-trajectory/:id',
+      name: 'learningTrajectory',
       beforeEnter: requireAuth,
       component: LearningTrajectories
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/admin',
+      name: 'admin',
+      component: Admin
     }
   ]
 })

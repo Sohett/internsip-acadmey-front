@@ -2,7 +2,7 @@
   <el-menu>
     <img src="../assets/favicon.png" class="left" alt="logo">
     <router-link to="/" class="center">Home</router-link> |
-    <router-link to="/learning-trajectories" class="center">Learning Trajectories</router-link>
+    <router-link to="/admin" class="center">Admin</router-link>
     <router-link to="#" class="right">{{ logoutin }}</router-link>
   </el-menu>
 </template>

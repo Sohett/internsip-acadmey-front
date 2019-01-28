@@ -1,8 +1,8 @@
 <template>
   <el-row class="row-bg" justify="center">
-    <el-col :span="24" v-for="trajectory in data.learningTrajectories">
+    <el-col :span="24">
       <div class="grid-content bg-purple">
-        <LearningTrajectory :trajectory="trajectory">
+        <LearningTrajectory>
         </LearningTrajectory>
       </div>
     </el-col>

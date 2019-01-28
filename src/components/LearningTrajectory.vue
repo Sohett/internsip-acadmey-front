@@ -1,24 +1,39 @@
 <template lang="html">
-    <el-card class="box-card">
+  <el-row>
+    <el-col :span="24"><div class="grid-content bg-purple-dark">
       <div slot="header" class="clearfix">
-        <h2> {{ trajectory.name }}</h2>
-        <!-- <el-button style="float: right; padding: 3px 0" type="text">Operation button</el-button> -->
+        <h2> {{ '🎓' + trajectory.name }}</h2>
+        <p>{{id}}</p>
       </div>
+      <br>
       <el-tabs type="card" style="height: auto;">
-        <el-tab-pane v-for="badge in trajectory.badges" :label="badge.name">
+        <el-tab-pane v-for="badge in trajectory.badges" :label="'🏅' + badge.name">
+          <br>
           <p>Status: <el-tag type="danger">Unfinished</el-tag></p>
           <Missions :badge="badge"></Missions>
         </el-tab-pane>
       </el-tabs>
-  </el-card>
+    </div></el-col>
+  </el-row>
 </template>
 
 <script>
 import Missions from './Missions.vue'
+import seraphinAcademyData from '@/seraphinAcademyData.json'
+
 export default {
-  props: ['trajectory', 'badge'],
+  props: ['badge'],
   components: {
     Missions
+  },
+  data() {
+    return {
+      id: null,
+      trajectory: seraphinAcademyData.learningTrajectories[0]
+    }
+  },
+  created() {
+    this.id = this.$route.params.id;
   }
 }
 </script>
@@ -39,10 +54,5 @@ export default {
   }
   .clearfix:after {
     clear: both
-  }
-
-  .box-card {
-    width: auto;
-    margin: 10px 10px;
   }
 </style>
