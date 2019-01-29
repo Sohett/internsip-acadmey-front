@@ -291,6 +291,72 @@
           }
         }
       ]
+    },
+    "9": {
+      "learningTrajectoryId": 9,
+      "name": "The Sys Admin and Kernel Learning Trajectory",
+      "badges": [
+        {
+          "name": "Ubuntu System",
+          "missions": {
+            "1": {
+              "missionId": 43,
+              "done": true,
+              "mission": "File system",
+              "missionDetails": "",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Amazone Web Services Admin",
+          "missions": {
+            "1": {
+              "missionId": 74,
+              "done": true,
+              "mission": "xxx",
+              "missionDetails": "",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Ansible",
+          "missions": {
+            "1": {
+              "missionId": 88,
+              "done": true,
+              "mission": "xxx",
+              "missionDetails": "",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Docker",
+          "missions": {
+            "1": {
+              "missionId": 32,
+              "done": true,
+              "mission": "xxx",
+              "missionDetails": "",
+              "level": 0
+            }
+          }
+        },
+        {
+          "name": "Security",
+          "missions": {
+            "1": {
+              "missionId": 98,
+              "done": true,
+              "mission": "xxx",
+              "missionDetails": "",
+              "level": 0
+            }
+          }
+        }
+      ]
     }
   }
 }

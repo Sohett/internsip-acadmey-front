@@ -13,6 +13,31 @@
             </SummaryLearningTrajectory>
           </div>
         </el-col>
+        <el-col :span="6" v-if="newLearningTrajectory">
+          <div class="grid-content bg-purple">
+            <el-card class="box-card" shadow="hover">
+              <div slot="header" class="clearfix">
+                <h2>{{ '🎓' + newLearningTrajectory }}</h2>
+              </div>
+              <div v-for="badge in newBadges" class="text item">
+                {{ '🏅' + badge.name}}
+              </div>
+              <div class="text item">
+                <el-input prefix-icon="el-icon-circle-plus-outline" placeholder="🏅 Add a new Badge + ENTER" v-model="newBadgeTitle" @keyup.enter.native="createNewBadge"></el-input>
+              </div>
+            </el-card>
+          </div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple">
+            <el-card class="box-card" shadow="never">
+              <div >
+                <h2>🎓</h2>
+                <el-input prefix-icon="el-icon-circle-plus-outline" placeholder="Add a new Learning Path + ENTER" v-model="newLearningTrajectoryTitle" @keyup.enter.native="createNewLearningTrajectory"></el-input>
+              </div>
+            </el-card>
+          </div>
+        </el-col>
       </el-tab-pane>
       <el-tab-pane label="🏛️ The company">
         <p>Name: Seraphin SA</p>
@@ -44,7 +69,11 @@ export default {
   data() {
     return {
       data: dataSchool1,
-      school: 'it'
+      school: 'it',
+      newLearningTrajectoryTitle: null,
+      newLearningTrajectory: null,
+      newBadgeTitle: '',
+      newBadges: []
     }
   },
   methods: {
@@ -57,6 +86,14 @@ export default {
           this.data = dataSchool2;
           break;
       }
+    },
+    createNewLearningTrajectory() {
+      this.newLearningTrajectory = this.newLearningTrajectoryTitle;
+      this.newLearningTrajectoryTitle = ''
+    },
+    createNewBadge() {
+      this.newBadges.push({ name: this.newBadgeTitle });
+      this.newBadgeTitle = ''
     }
   }
 }
