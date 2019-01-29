@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "preproduction": "npm run build",
+    "production": "aws s3 cp dist/ s3://seraphin.schooling.host --recursive --profile thomas",
+    "postproduction": "aws cloudfront create-invalidation --distribution-id E305Q16BEE5QSO --paths '/*' --profile thomas"
   },
   "dependencies": {
     "vue": "^2.5.21",
