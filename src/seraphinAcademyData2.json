@@ -1,296 +1,296 @@
 {
-  "learningTrajectories": [
-    {
+  "learningTrajectories": {
+    "1": {
       "learningTrajectoryId": 1,
-      "name": "Vente de produit d'assurance",
+      "name": "Gestion Assurantielle",
       "badges": [
         {
-          "name": "Assurance voiture",
-          "missions": [
-            {
+          "name": "Créer un contrat",
+          "missions": {
+            "1": {
               "missionId": 1,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "xxx",
               "level": 3
             },
-            {
+            "2": {
               "missionId": 2,
               "done": false,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "xxx",
               "level": 6
             },
-            {
+            "3": {
               "missionId": 3,
               "done": false,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "xxx",
               "level": 2
             },
-            {
+            "4":{
               "missionId": 28,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "xxx",
               "level": 7
             }
-          ]
+          }
         },
         {
-          "name": "Assurance Moto",
-          "missions": [
-            {
+          "name": "Créer un avenant",
+          "missions": {
+            "1": {
               "missionId": 4,
               "done": false,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "xxx",
               "level": 8
             },
-            {
+            "2": {
               "missionId": 5,
               "done": false,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "xxx",
               "level": 5
             }
-          ]
+          }
         },
         {
-          "name": "Client Complet",
-          "missions": [
-            {
+          "name": "Créer un renon",
+          "missions": {
+            "1": {
               "missionId": 6,
               "done": false,
-              "mission": "🎖️ xxx",
-              "missionDetails": "",
+              "mission": "xxx",
+              "missionDetails": "xxx",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "Assurance Maison",
-          "missions": [
-            {
+          "name": "Annuler un contrat",
+          "missions": {
+            "1": {
               "missionId": 7,
               "done": false,
-              "mission": "🎖️ xxx",
-              "missionDetails": "",
+              "mission": "xxx",
+              "missionDetails": "xxx",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "Assurance RC Fam",
-          "missions": [
-            {
+          "name": "Supprimer un client",
+          "missions": {
+            "1": {
               "missionId": 7,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         }
       ]
     },
-    {
+    "2": {
       "learningTrajectoryId": 2,
-      "name": "La gestion assurancielle",
+      "name": "Gestion des sinistres",
       "badges": [
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Sinistre Moto",
+          "missions": {
+            "1": {
               "missionId": 9,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Sinistre Digital Nomad",
+          "missions": {
+            "1": {
               "missionId": 10,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Communication avec le client",
+          "missions": {
+            "1": {
               "missionId": 11,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Faire appel à un expert",
+          "missions": {
+            "1": {
               "missionId": 12,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Gestion des compagnies d'assurance",
+          "missions": {
+            "1": {
               "missionId": 13,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         }
       ]
     },
-    {
+    "3": {
       "learningTrajectoryId": 3,
-      "name": "Les impayés",
+      "name": "Vente d'assurance",
       "badges": [
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Moto",
+          "missions": {
+            "1": {
               "missionId": 15,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Auto",
+          "missions": {
+            "1": {
               "missionId": 16,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Habitation",
+          "missions": {
+            "1": {
               "missionId": 17,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Digital Nomad",
+          "missions": {
+            "1": {
               "missionId": 18,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Client complet",
+          "missions": {
+            "1": {
               "missionId": 19,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         }
       ]
     },
-    {
+    "4": {
       "learningTrajectoryId": 4,
-      "name": "Le developpement produit",
+      "name": "Marketing",
       "badges": [
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "SEO",
+          "missions": {
+            "1": {
               "missionId": 21,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Content Marketing",
+          "missions": {
+            "1": {
               "missionId": 22,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Gestion des leads",
+          "missions": {
+            "1": {
               "missionId": 23,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Analytics",
+          "missions": {
+            "1": {
               "missionId": 24,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "SEA",
+          "missions": {
+            "1": {
               "missionId": 25,
               "done": true,
-              "mission": "🎖️ xxx",
+              "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         }
       ]
     }
-  ]
+  }
 }

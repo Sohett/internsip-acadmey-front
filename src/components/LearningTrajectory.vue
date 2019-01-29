@@ -3,7 +3,8 @@
     <el-col :span="24"><div class="grid-content bg-purple-dark">
       <div slot="header" class="clearfix">
         <h2> {{ '🎓' + trajectory.name }}</h2>
-        <p>{{id}}</p>
+        <p>{{learningTrajectoryId}}</p>
+        <router-link to="/" class="left"><i class="el-icon-caret-left">Back</i></router-link>
       </div>
       <br>
       <el-tabs type="card" style="height: auto;">
@@ -28,12 +29,16 @@ export default {
   },
   data() {
     return {
-      id: null,
-      trajectory: seraphinAcademyData.learningTrajectories[0]
+      learningTrajectoryId: null
+    }
+  },
+  computed: {
+    trajectory() {
+      return seraphinAcademyData.learningTrajectories[this.learningTrajectoryId]
     }
   },
   created() {
-    this.id = this.$route.params.id;
+    this.learningTrajectoryId = this.$route.params.id;
   }
 }
 </script>
@@ -54,5 +59,9 @@ export default {
   }
   .clearfix:after {
     clear: both
+  }
+
+  .left{
+    float: left;
   }
 </style>

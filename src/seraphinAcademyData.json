@@ -1,296 +1,296 @@
 {
-  "learningTrajectories": [
-    {
+  "learningTrajectories": {
+    "1": {
       "learningTrajectoryId": 1,
       "name": "The Digital Marketeer Learning Path",
       "badges": [
         {
           "name": "SEO & Contentful",
-          "missions": [
-            {
+          "missions": {
+            "1": {
               "missionId": 1,
               "done": true,
               "mission": "Write a new SEO article",
               "missionDetails": "Define the keywords, the cluster, the URL and then write your first Contentful article, our Saas used for CMS",
               "level": 3
             },
-            {
+            "2": {
               "missionId": 2,
               "done": false,
               "mission": "Peer Review the whole SEO article process",
               "missionDetails": "Have a look here https://google.com on how to respect the rules fixed at Seraphin for a good article, then verify the whole technical journey before pushing ot to porduction.",
               "level": 6
             },
-            {
+            "3": {
               "missionId": 3,
               "done": false,
               "mission": "🔐 Generate the new contentful routes",
               "missionDetails": "Generates the routes for the contentful articles created with the existing rake task.",
               "level": 2
             },
-            {
+            "4":{
               "missionId": 28,
               "done": true,
               "mission": "🔐 Develop a new SEO partnership",
               "missionDetails": "Work with a different organisation in order to develop a partnership in terms of backlinking",
               "level": 7
             }
-          ]
+          }
         },
         {
           "name": "Data Scientist",
-          "missions": [
-            {
+          "missions": {
+            "1": {
               "missionId": 4,
               "done": false,
               "mission": "Create or update a Klip in Klipfolio",
               "missionDetails": "Connect new data sources and create a new Klip with the values in order to make the numbers talk.",
               "level": 8
             },
-            {
+            "2": {
               "missionId": 5,
               "done": false,
               "mission": "Become a Google Analytics expert",
               "missionDetails": "Define your first funnel visualation and define goals to track with the tool",
               "level": 5
             }
-          ]
+          }
         },
         {
           "name": "Rails Frontend",
-          "missions": [
-            {
+          "missions": {
+            "1": {
               "missionId": 6,
               "done": false,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
           "name": "Customer Journey Expert",
-          "missions": [
-            {
+          "missions": {
+            "1": {
               "missionId": 7,
               "done": false,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
           "name": "Partnership development",
-          "missions": [
-            {
+          "missions": {
+            "1": {
               "missionId": 7,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         }
       ]
     },
-    {
+    "2": {
       "learningTrajectoryId": 2,
       "name": "The Ruby on Rails Production Ready Learning Path",
       "badges": [
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Rails testing",
+          "missions": {
+            "1": {
               "missionId": 9,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Staging deployment",
+          "missions": {
+            "1": {
               "missionId": 10,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Presenters",
+          "missions": {
+            "1": {
               "missionId": 11,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Offer Provider",
+          "missions": {
+            "1": {
               "missionId": 12,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Services & External API",
+          "missions": {
+            "1": {
               "missionId": 13,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         }
       ]
     },
-    {
+    "3": {
       "learningTrajectoryId": 3,
       "name": "The Web Architecture & API Learning Path",
       "badges": [
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Lambdas",
+          "missions": {
+            "1": {
               "missionId": 15,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "API Gateway",
+          "missions": {
+            "1": {
               "missionId": 16,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "AWS",
+          "missions": {
+            "1": {
               "missionId": 17,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Serverless Architecture",
+          "missions": {
+            "1": {
               "missionId": 18,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Microservice migration",
+          "missions": {
+            "1": {
               "missionId": 19,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         }
       ]
     },
-    {
+    "4": {
       "learningTrajectoryId": 4,
       "name": "The Single Page App & VueJs Learning Path",
       "badges": [
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Components",
+          "missions": {
+            "1": {
               "missionId": 21,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Router",
+          "missions": {
+            "1": {
               "missionId": 22,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Store",
+          "missions": {
+            "1": {
               "missionId": 23,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "External Database",
+          "missions": {
+            "1": {
               "missionId": 24,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         },
         {
-          "name": "xxx",
-          "missions": [
-            {
+          "name": "Authentification",
+          "missions": {
+            "1": {
               "missionId": 25,
               "done": true,
               "mission": "xxx",
               "missionDetails": "",
               "level": 0
             }
-          ]
+          }
         }
       ]
     }
-  ]
+  }
 }
