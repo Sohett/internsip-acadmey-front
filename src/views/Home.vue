@@ -2,11 +2,15 @@
   <el-row class="row-bg center" justify="center">
     <el-tabs type="border-card">
       <el-tab-pane label="📓 Schools">
-        <el-radio-group @change="changeDataSchool" v-model="school" style="margin-bottom: 20px;">
-          <el-radio-button label="it">📓 IT School</el-radio-button>
-          <el-radio-button label="business">📓 Business School</el-radio-button>
+        <el-radio-group v-model="schoolLabel" style="margin-bottom: 20px;">
+          <el-radio-button v-for="school in schools" :label="school.label">
+            <span @click="changeData(school)">{{ school.name }}</span>
+          </el-radio-button>
+          <el-radio-button >
+            <span @click="promptNewSchool"><i class="el-icon-circle-plus-outline"></i> Create New School</span>
+          </el-radio-button>
         </el-radio-group>
-        <p>Here are the different learning paths for the engineering school</p>
+        <p>Here are the different 🎓learning paths for the 📓engineering school</p>
         <el-col :span="6" v-for="trajectory in data.learningTrajectories">
           <div class="grid-content bg-purple">
             <SummaryLearningTrajectory :trajectory="trajectory">
@@ -69,24 +73,26 @@ export default {
   data() {
     return {
       data: dataSchool1,
-      school: 'it',
       newLearningTrajectoryTitle: null,
       newLearningTrajectory: null,
       newBadgeTitle: '',
-      newBadges: []
+      newBadges: [],
+      schoolLabel: 'it',
+      schools: [
+        {
+          label: 'it',
+          name: '📓 IT School',
+          data: dataSchool1
+        },
+        {
+          label: 'business',
+          name: '📓 Business School',
+          data: dataSchool2
+        }
+      ]
     }
   },
   methods: {
-    changeDataSchool() {
-      switch (this.school) {
-        case 'it':
-          this.data = dataSchool1;
-          break;
-        case 'business':
-          this.data = dataSchool2;
-          break;
-      }
-    },
     createNewLearningTrajectory() {
       this.newLearningTrajectory = this.newLearningTrajectoryTitle;
       this.newLearningTrajectoryTitle = ''
@@ -94,6 +100,22 @@ export default {
     createNewBadge() {
       this.newBadges.push({ name: this.newBadgeTitle });
       this.newBadgeTitle = ''
+    },
+    changeData(school) {
+      console.log(school)
+      this.data = school.data
+      this.schoolLabel = school.label
+    },
+    promptNewSchool() {
+      this.$prompt('Enter the name of your new School', 'Create a new School 📓', {
+        confirmButtonText: 'Create',
+        cancelButtonText: 'Cancel'
+      }).then(({ value }) => {
+        this.$message({
+          type: 'success',
+          message: `The new school ${value} was correctly created`
+        });
+      })
     }
   }
 }

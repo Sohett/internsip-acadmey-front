@@ -1,20 +1,33 @@
 <template lang="pug">
-  #app.full-height
-    AppMenu#nav
-    el-main(style="padding:50px;")
-      router-view
-    AppFooter
+  #app
+    div(v-if="displayLoginPage")
+      el-container.full-height
+        Login
+    div(v-else)
+      AppMenu#nav
+      el-main(style="padding:50px;")
+        router-view
+      AppFooter
 </template>
 
 <script>
+  import { isLoggedIn } from '@/services/auth'
+
   import AppMenu from './components/AppMenu'
   import AppFooter from './components/AppFooter'
+  import Login from '@/components/Login'
 
   export default {
   name: 'app',
   components: {
     AppMenu,
-    AppFooter
+    AppFooter,
+    Login
+  },
+  computed: {
+    displayLoginPage () {
+      return (this.$route.name !== 'Callback' && !isLoggedIn())
+    }
   }
 }
 </script>

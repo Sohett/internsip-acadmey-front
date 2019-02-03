@@ -9,14 +9,15 @@ const CLIENT_ID = 'MnRDJWynkCWlyN7G3hx8tMvydauGbTLO'
 const CLIENT_DOMAIN = 'schooling.eu.auth0.com'
 
 function redirectUri () {
-  if (process.env.NODE_ENV === 'production') {
-    return 'https://app.schooling.be/callback'
-  } else {
-    return 'http://localhost:8080/callback'
-  }
+  return 'http://localhost:8080/callback'
+  // if (process.env.NODE_ENV === 'production') {
+  //   return 'https://app.schooling.be/callback'
+  // } else {
+  //   return 'http://localhost:8080/callback'
+  // }
 }
 
-var auth = new auth0.WebAuth({
+const auth = new auth0.WebAuth({
   clientID: CLIENT_ID,
   domain: CLIENT_DOMAIN
 })
@@ -41,10 +42,10 @@ export function logout () {
 export function requireAuth (to, from, next) {
   if (!isLoggedIn()) {
     next({
-      path: '/about',
-      query: { redirect: to.fullPath }
+      path: '/login'
     })
   } else {
+    console.log(isLoggedIn, getAccessToken)
     next()
   }
 }
