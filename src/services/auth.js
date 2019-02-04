@@ -10,7 +10,7 @@ const CLIENT_DOMAIN = 'schooling.eu.auth0.com'
 
 function redirectUri () {
   if (process.env.NODE_ENV === 'production') {
-    return 'https://app.schooling.be/callback'
+    return 'https://app.schooling.host/callback'
   } else {
     return 'http://localhost:8080/callback'
   }
