@@ -2,21 +2,31 @@
   <el-row>
     <el-col :span="24">
       <div class="grid-content bg-purple-dark">
-        <div slot="header" class="clearfix">
-          <router-link to="/" class="left"><i class="el-icon-caret-left">Back</i></router-link>
+        <router-link to="/" class="left"><i class="el-icon-caret-left">Learning Trajectories 🎓</i></router-link>
+        <br>
+        <div slot="header" class="clearfix" style="margin: auto; width: 600px; text-align: center">
           <h2> {{ '🎓' + trajectory.name }}</h2>
-          <p>{{learningTrajectoryId}}</p>
+          <p >Description: This learning path will take you into the cellar of digital marketing. You will learn every details related to how we aquire new leads and data on our clients</p>
+          <br>
+          <el-progress :text-inside="true" :stroke-width="18" :percentage="trajectory.progress" status=""></el-progress>
         </div>
+        <hr>
+        <br>
         <el-container>
-          <el-button size="small" class="left" @click="addBadge(trajectory)">Create new Badge</el-button>
+          <el-button v-if="isAdmin" size="small" type="success" plain class="left" @click="addBadge(trajectory)">🏅Create new Badge <i class="el-icon-circle-plus-outline"></i></el-button>
         </el-container>
         <br>
-        <el-tabs type="card" style="height: auto;" closable @tab-remove="removeTab(trajectory)">
+        <el-tabs type="card" style="height: auto;">
           <el-tab-pane v-for="badge in trajectory.badges" :label="'🏅' + badge.name">
-            <br>
-            <p>Status: <el-tag type="danger">Unfinished</el-tag></p>
+            <el-container style="margin-top: 10px">
+              <el-button v-if="isAdmin" size="mini" type="primary" plain icon="el-icon-edit" @click="editBadge(badge)">Edit Badge🏅</el-button>
+              <el-button v-if="isAdmin" size="mini" type="danger" plain icon="el-icon-delete" @click="deleteBadge(badge)">Delete Badge🏅</el-button>
+            </el-container>
+            <el-progress type="circle" :percentage="50" status=""></el-progress>
             <Missions :badge="badge"></Missions>
           </el-tab-pane>
+          <br>
+          <el-button v-if="isAdmin" size="small" type="success" plain class="left" @click="addMission(trajectory)">🎯Create new mission <i class="el-icon-circle-plus-outline"></i></el-button>
         </el-tabs>
       </div>
     </el-col>
@@ -24,6 +34,7 @@
 </template>
 
 <script>
+import store from '@/store';
 import Missions from './Missions.vue'
 import seraphinAcademyData from '@/seraphinAcademyData.json'
 
@@ -34,7 +45,8 @@ export default {
   },
   data() {
     return {
-      learningTrajectoryId: null
+      learningTrajectoryId: null,
+      isAdmin: store.state.isAdmin
     }
   },
   computed: {
@@ -54,6 +66,17 @@ export default {
         this.$message({
           type: 'success',
           message: `The new badge ${value} was correctly created`
+        });
+      })
+    },
+    addMission() {
+      this.$prompt('Enter the name of the new mission', 'Create a new Mission 🎯', {
+        confirmButtonText: 'Create',
+        cancelButtonText: 'Cancel'
+      }).then(({ value }) => {
+        this.$message({
+          type: 'success',
+          message: `The new mission ${value} was correctly created`
         });
       })
     },

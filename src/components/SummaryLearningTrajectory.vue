@@ -4,12 +4,15 @@
         <router-link :to="{ name: 'learningTrajectory', params: {id: trajectory.learningTrajectoryId } }">
           <h2> {{ '🎓' + trajectory.name }}</h2>
         </router-link>
-        <i v-if="isAdmin" style="margin: 0 5px" @click="editLearningPathTitle(trajectory)" class="el-icon-edit"></i>
-        <i v-if="isAdmin" style="margin: 0 5px" @click="deleteLearningPath(trajectory)" class="el-icon-delete"></i>
+        <i v-if="isAdmin" @click="editLearningPathTitle(trajectory)" class="el-icon-edit admin-edit admin-edit--primary"></i>
+        <i v-if="isAdmin" @click="deleteLearningPath(trajectory)" class="el-icon-delete admin-edit admin-edit--danger"></i>
+        <el-progress style="margin-top: 10px" :percentage="trajectory.progress"></el-progress>
       </div>
-      <div v-for="badge in trajectory.badges" class="text item">
-        {{ '🏅' + badge.name}}
-      </div>
+      <router-link class="no-decoration" :to="{ name: 'learningTrajectory', params: {id: trajectory.learningTrajectoryId } }">
+        <div v-for="badge in trajectory.badges" class="text item">
+          <span>{{ `🏅 ${badge.name} ` }}</span><i v-if="badge.accomplished" class="el-icon-success"></i>
+        </div>
+      </router-link>
       <div v-if="isAdmin" class="text item">
         <el-input prefix-icon="el-icon-circle-plus-outline" placeholder="🏅 Add a new Badge + ENTER" v-model="newBadgeTitle" @keyup.enter.native="createNewBadge(trajectory)"></el-input>
       </div>
@@ -17,17 +20,19 @@
 </template>
 
 <script>
+import store from '@/store';
+
 export default {
   props: ['trajectory'],
   data() {
     return {
       newBadgeTitle: '',
-      isAdmin: true
+      isAdmin: store.state.isAdmin
     }
   },
   methods: {
     deleteLearningPath(trajectory){
-      this.$confirm(`Are you sure you want to delete the \"${trajectory.name}\" badges and all its related \"Badges\" ?`, 'Delete Learning Trajectory', {
+      this.$confirm(`Are you sure you want to delete the \"${trajectory.name}\" and all its related \"Badges\" and \"Missions\"?`, 'Delete Learning Trajectory', {
         confirmButtonText: 'OK',
         cancelButtonText: 'Cancel',
         type: 'warning'
@@ -74,5 +79,25 @@ export default {
   .box-card {
     width: auto;
     margin: 10px 10px;
+  }
+
+  .no-decoration {
+    color: #000000;
+  }
+
+  .no-decoration:hover {
+    color: #000000;
+  }
+
+  .admin-edit--danger{
+    color: #f56c6c;
+  }
+
+  .admin-edit--primary{
+    color: #409eff;
+  }
+
+  .admin-edit{
+    margin: 0 5px;
   }
 </style>

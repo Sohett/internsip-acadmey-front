@@ -10,28 +10,28 @@
             "1": {
               "missionId": 1,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "xxx",
               "level": 3
             },
             "2": {
               "missionId": 2,
               "done": false,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "xxx",
               "level": 6
             },
             "3": {
               "missionId": 3,
               "done": false,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "xxx",
               "level": 2
             },
             "4":{
               "missionId": 28,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "xxx",
               "level": 7
             }
@@ -43,14 +43,14 @@
             "1": {
               "missionId": 4,
               "done": false,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "xxx",
               "level": 8
             },
             "2": {
               "missionId": 5,
               "done": false,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "xxx",
               "level": 5
             }
@@ -62,7 +62,7 @@
             "1": {
               "missionId": 6,
               "done": false,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "xxx",
               "level": 0
             }
@@ -74,7 +74,7 @@
             "1": {
               "missionId": 7,
               "done": false,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "xxx",
               "level": 0
             }
@@ -86,7 +86,7 @@
             "1": {
               "missionId": 7,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -104,7 +104,7 @@
             "1": {
               "missionId": 9,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -116,7 +116,7 @@
             "1": {
               "missionId": 10,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -128,7 +128,7 @@
             "1": {
               "missionId": 11,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -140,7 +140,7 @@
             "1": {
               "missionId": 12,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -152,7 +152,7 @@
             "1": {
               "missionId": 13,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -170,7 +170,7 @@
             "1": {
               "missionId": 15,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -182,7 +182,7 @@
             "1": {
               "missionId": 16,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -194,7 +194,7 @@
             "1": {
               "missionId": 17,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -206,7 +206,7 @@
             "1": {
               "missionId": 18,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -218,7 +218,7 @@
             "1": {
               "missionId": 19,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -236,7 +236,7 @@
             "1": {
               "missionId": 21,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -248,7 +248,7 @@
             "1": {
               "missionId": 22,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -260,7 +260,7 @@
             "1": {
               "missionId": 23,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -272,7 +272,7 @@
             "1": {
               "missionId": 24,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }
@@ -284,7 +284,7 @@
             "1": {
               "missionId": 25,
               "done": true,
-              "mission": "xxx",
+              "mission": "🎯 xxx",
               "missionDetails": "",
               "level": 0
             }

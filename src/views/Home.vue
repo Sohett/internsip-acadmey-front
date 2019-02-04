@@ -6,12 +6,12 @@
           <el-radio-button v-for="school in schools" :label="school.label">
             <span @click="changeData(school)">{{ school.name }}</span>
           </el-radio-button>
-          <el-radio-button >
-            <span @click="promptNewSchool"><i class="el-icon-circle-plus-outline"></i> Create New School</span>
+          <el-radio-button v-if="isAdmin">
+            <span @click="promptNewSchool" style="color: #51bd91"><i class="el-icon-circle-plus-outline"></i> Create New School</span>
           </el-radio-button>
         </el-radio-group>
         <el-container>
-          <el-button size="small" style="margin-left: 10px; margin-bottom: 20px" @click="deleteSchool" type="danger" plain>Delete School <i class="el-icon-delete el-icon-right"></i></el-button>
+          <el-button v-if="isAdmin" size="small" style="margin-left: 10px; margin-bottom: 20px" @click="deleteSchool" type="danger" plain>Delete School <i class="el-icon-delete el-icon-right"></i></el-button>
         </el-container>
         <el-col :span="6" v-for="trajectory in data.learningTrajectories">
           <div class="grid-content bg-purple">
@@ -34,7 +34,7 @@
             </el-card>
           </div>
         </el-col>
-        <el-col :span="6">
+        <el-col :span="6" v-if="isAdmin">
           <div class="grid-content bg-purple">
             <el-card class="box-card" shadow="never">
               <div >
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import store from '@/store';
 import SummaryLearningTrajectory from '@/components/SummaryLearningTrajectory.vue'
 import dataSchool1 from '@/seraphinAcademyData.json'
 import dataSchool2 from '@/seraphinAcademyData2.json'
@@ -74,6 +74,7 @@ export default {
   props: ['trajectory'],
   data() {
     return {
+      isAdmin: store.state.isAdmin,
       data: dataSchool1,
       newLearningTrajectoryTitle: null,
       newLearningTrajectory: null,
