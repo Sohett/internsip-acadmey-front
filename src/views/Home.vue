@@ -1,5 +1,6 @@
 <template>
   <el-row class="row-bg center" justify="center">
+    <el-button style="margin-bottom: 20px" type="info" plain @click="becomeAdmin">{{ this.$store.state.isAdmin ? 'See the user view' : 'See the admin view' }}</el-button>
     <el-tabs type="border-card">
       <el-tab-pane label="📓 Schools">
         <el-radio-group v-model="schoolLabel" style="margin-bottom: 20px;">
@@ -62,7 +63,7 @@
 </template>
 
 <script>
-import store from '@/store';
+import { mapActions } from 'vuex'
 import SummaryLearningTrajectory from '@/components/SummaryLearningTrajectory.vue'
 import dataSchool1 from '@/seraphinAcademyData.json'
 import dataSchool2 from '@/seraphinAcademyData2.json'
@@ -72,9 +73,13 @@ export default {
     SummaryLearningTrajectory
   },
   props: ['trajectory'],
+  computed: {
+    isAdmin() {
+      return this.$store.state.isAdmin
+    }
+  },
   data() {
     return {
-      isAdmin: store.state.isAdmin,
       data: dataSchool1,
       newLearningTrajectoryTitle: null,
       newLearningTrajectory: null,
@@ -97,6 +102,10 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['setBecomeAdmin']),
+    becomeAdmin() {
+      this.setBecomeAdmin(!this.isAdmin)
+    },
     createNewLearningTrajectory() {
       this.newLearningTrajectory = this.newLearningTrajectoryTitle;
       this.newLearningTrajectoryTitle = ''

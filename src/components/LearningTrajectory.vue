@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import store from '@/store';
 import Missions from './Missions.vue'
 import seraphinAcademyData from '@/seraphinAcademyData.json'
 
@@ -45,13 +44,15 @@ export default {
   },
   data() {
     return {
-      learningTrajectoryId: null,
-      isAdmin: store.state.isAdmin
+      learningTrajectoryId: null
     }
   },
   computed: {
     trajectory() {
       return seraphinAcademyData.learningTrajectories[this.learningTrajectoryId]
+    },
+    isAdmin() {
+      return this.$store.state.isAdmin
     }
   },
   created() {

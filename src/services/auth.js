@@ -9,12 +9,11 @@ const CLIENT_ID = 'MnRDJWynkCWlyN7G3hx8tMvydauGbTLO'
 const CLIENT_DOMAIN = 'schooling.eu.auth0.com'
 
 function redirectUri () {
-  return 'http://localhost:8080/callback'
-  // if (process.env.NODE_ENV === 'production') {
-  //   return 'https://app.schooling.be/callback'
-  // } else {
-  //   return 'http://localhost:8080/callback'
-  // }
+  if (process.env.NODE_ENV === 'production') {
+    return 'https://app.schooling.be/callback'
+  } else {
+    return 'http://localhost:8080/callback'
+  }
 }
 
 const auth = new auth0.WebAuth({

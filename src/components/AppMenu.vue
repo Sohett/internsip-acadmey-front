@@ -10,12 +10,11 @@
 
 <script>
   import { logout } from '@/services/auth'
-  import store from '@/store';
 
   export default {
-    data() {
-      return {
-        isAdmin: store.state.isAdmin
+    computed: {
+      isAdmin() {
+        return this.$store.state.isAdmin
       }
     },
     methods: {

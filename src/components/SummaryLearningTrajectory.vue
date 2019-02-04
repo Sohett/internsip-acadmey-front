@@ -20,14 +20,18 @@
 </template>
 
 <script>
-import store from '@/store';
+import store from '@/store/store';
 
 export default {
   props: ['trajectory'],
   data() {
     return {
-      newBadgeTitle: '',
-      isAdmin: store.state.isAdmin
+      newBadgeTitle: ''
+    }
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.state.isAdmin
     }
   },
   methods: {

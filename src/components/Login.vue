@@ -5,7 +5,7 @@
       <el-row :gutter="20">
         <el-col :span="10" :offset="14" style="height:100vh; position:relative">
           <div class="login">
-            <h1>Welcome to your education Saas.</h1>
+            <h1>Not your everyday education Saas.</h1>
             <p>What will you learn today?</p>
             <br>
             <el-button type="primary" @click="handleLog" icon="el-icon-success">Login</el-button>
@@ -34,7 +34,7 @@ h1 {
   font-weight: 800;
 }
 .splash {
-  background-image: url('https://source.unsplash.com/1600x900/?education');
+  background-image: url('https://source.unsplash.com/1600x900/?nature,mountain,water');
   background-size: cover;
   height: 100vh;
   width: 100vw;

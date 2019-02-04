@@ -55,18 +55,15 @@
 </template>
 
 <script>
-  import store from '@/store';
-
   export default {
     props: ['badge'],
     methods: {
       setMissionDone(missionId) {
-        console.log(missionId)
       }
     },
-    data() {
-      return {
-        isAdmin: store.state.isAdmin
+    computed: {
+      isAdmin () {
+        return this.$store.state.isAdmin
       }
     }
   }
