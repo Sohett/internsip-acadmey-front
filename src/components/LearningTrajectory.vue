@@ -1,23 +1,25 @@
 <template lang="html">
   <el-row>
-    <el-col :span="24"><div class="grid-content bg-purple-dark">
-      <div slot="header" class="clearfix">
-        <router-link to="/" class="left"><i class="el-icon-caret-left">Back</i></router-link>
-        <h2> {{ '🎓' + trajectory.name }}</h2>
-        <p>{{learningTrajectoryId}}</p>
+    <el-col :span="24">
+      <div class="grid-content bg-purple-dark">
+        <div slot="header" class="clearfix">
+          <router-link to="/" class="left"><i class="el-icon-caret-left">Back</i></router-link>
+          <h2> {{ '🎓' + trajectory.name }}</h2>
+          <p>{{learningTrajectoryId}}</p>
+        </div>
+        <el-container>
+          <el-button size="small" class="left" @click="addBadge(trajectory)">Create new Badge</el-button>
+        </el-container>
+        <br>
+        <el-tabs type="card" style="height: auto;" closable @tab-remove="removeTab(trajectory)">
+          <el-tab-pane v-for="badge in trajectory.badges" :label="'🏅' + badge.name">
+            <br>
+            <p>Status: <el-tag type="danger">Unfinished</el-tag></p>
+            <Missions :badge="badge"></Missions>
+          </el-tab-pane>
+        </el-tabs>
       </div>
-      <el-container>
-        <el-button size="small" class="left" @click="addBadge(trajectory)">Create new Badge</el-button>
-      </el-container>
-      <br>
-      <el-tabs type="card" style="height: auto;" closable @tab-remove="removeTab(trajectory)">
-        <el-tab-pane v-for="badge in trajectory.badges" :label="'🏅' + badge.name">
-          <br>
-          <p>Status: <el-tag type="danger">Unfinished</el-tag></p>
-          <Missions :badge="badge"></Missions>
-        </el-tab-pane>
-      </el-tabs>
-    </div></el-col>
+    </el-col>
   </el-row>
 </template>
 

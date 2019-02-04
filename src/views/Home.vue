@@ -10,7 +10,9 @@
             <span @click="promptNewSchool"><i class="el-icon-circle-plus-outline"></i> Create New School</span>
           </el-radio-button>
         </el-radio-group>
-        <p>Here are the different 🎓learning paths for the 📓engineering school</p>
+        <el-container>
+          <el-button size="small" style="margin-left: 10px; margin-bottom: 20px" @click="deleteSchool" type="danger" plain>Delete School <i class="el-icon-delete el-icon-right"></i></el-button>
+        </el-container>
         <el-col :span="6" v-for="trajectory in data.learningTrajectories">
           <div class="grid-content bg-purple">
             <SummaryLearningTrajectory :trajectory="trajectory">
@@ -78,6 +80,7 @@ export default {
       newBadgeTitle: '',
       newBadges: [],
       schoolLabel: 'it',
+      schoolName: '📓 IT School',
       schools: [
         {
           label: 'it',
@@ -102,9 +105,21 @@ export default {
       this.newBadgeTitle = ''
     },
     changeData(school) {
-      console.log(school)
       this.data = school.data
       this.schoolLabel = school.label
+      this.schoolName = school.name
+    },
+    deleteSchool() {
+      this.$confirm(`Are you sure you want to delete the \"${this.schoolName}\" and all its related \"Learning Trajectories\" ?`, 'Delete School', {
+        confirmButtonText: 'OK',
+        cancelButtonText: 'Cancel',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: 'Delete completed'
+        });
+      })
     },
     promptNewSchool() {
       this.$prompt('Enter the name of your new School', 'Create a new School 📓', {

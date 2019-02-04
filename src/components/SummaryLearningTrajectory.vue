@@ -4,7 +4,8 @@
         <router-link :to="{ name: 'learningTrajectory', params: {id: trajectory.learningTrajectoryId } }">
           <h2> {{ '🎓' + trajectory.name }}</h2>
         </router-link>
-        <i v-if="isAdmin" @click="editLearningPathTitle(trajectory)" class="el-icon-edit"></i>
+        <i v-if="isAdmin" style="margin: 0 5px" @click="editLearningPathTitle(trajectory)" class="el-icon-edit"></i>
+        <i v-if="isAdmin" style="margin: 0 5px" @click="deleteLearningPath(trajectory)" class="el-icon-delete"></i>
       </div>
       <div v-for="badge in trajectory.badges" class="text item">
         {{ '🏅' + badge.name}}
@@ -25,6 +26,18 @@ export default {
     }
   },
   methods: {
+    deleteLearningPath(trajectory){
+      this.$confirm(`Are you sure you want to delete the \"${trajectory.name}\" badges and all its related \"Badges\" ?`, 'Delete Learning Trajectory', {
+        confirmButtonText: 'OK',
+        cancelButtonText: 'Cancel',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: 'Delete completed'
+        });
+      })
+    },
     editLearningPathTitle(trajectory) {
       this.$prompt('Edit the Learning Path Title', 'Learning Path Title', {
         confirmButtonText: 'Update',

@@ -37,8 +37,24 @@
         width="120">
       <template slot-scope="scope">
         <el-button
+        type="primary"
+        plain
         size="mini"
         @click="setMissionDone(scope.row.missionId)">Done</el-button>
+      </template>
+    </el-table-column>
+    <el-table-column
+      v-if="isAdmin"
+      label="Operations"
+      width="200">
+      <template slot-scope="scope">
+        <el-button
+          size="mini"
+          @click="handleEdit(scope.$index, scope.row.missionId)">Edit</el-button>
+        <el-button
+          size="mini"
+          type="danger"
+          @click="handleDelete(scope.$index, scope.row.missionId)">Delete</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -50,6 +66,11 @@
     methods: {
       setMissionDone(missionId) {
         console.log(missionId)
+      }
+    },
+    data() {
+      return {
+        isAdmin: true
       }
     }
   }

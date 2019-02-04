@@ -34,7 +34,7 @@ h1 {
   font-weight: 800;
 }
 .splash {
-  background-image: url('https://source.unsplash.com/1600x900/?nature,mountain');
+  background-image: url('https://source.unsplash.com/1600x900/?education');
   background-size: cover;
   height: 100vh;
   width: 100vw;

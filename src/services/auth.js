@@ -45,7 +45,6 @@ export function requireAuth (to, from, next) {
       path: '/login'
     })
   } else {
-    console.log(isLoggedIn, getAccessToken)
     next()
   }
 }
@@ -81,7 +80,6 @@ export function setAccessToken () {
 // Get and store id_token in local storage
 export function setIdToken () {
   let idToken = getParameterByName('id_token')
-  console.log(idToken)
   localStorage.setItem(ID_TOKEN_KEY, idToken)
 }
 
