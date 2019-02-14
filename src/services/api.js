@@ -1,57 +1,65 @@
 import axios from 'axios'
-import { isLoggedIn, getIdToken } from './auth'
-const SERVER_URL = 'https://api.seraphin.be'
+import snakeCaseKeys from 'snakecase-keys'
+import * as camelCaseKeys from 'camelcase-keys'
+import { getIdToken } from './auth'
 
-// eslint-disable-next-line
-function handleError (response) {
-  if (response.statusText !== 'OK') throw new Error(response.statusText)
-  return response
+const SERVER_URL = 'https://api.schooling.host'
+
+const formatData = (data) => {
+  return snakeCaseKeys(data)
+}
+
+const formatResponse = (response) => {
+  const data = response.data.data
+  if (data) {
+    if (Array.isArray(data)) {
+      return data.map(x => camelCaseKeys(x, { deep: true }))
+    } else {
+      return camelCaseKeys(data, { deep: true })
+    }
+  }
 }
 
 class API {
-  static init () {
-    this.init = {
-      cache: 'default',
-      headers: this.getHeaders()
+  static headers () {
+    return {
+      'Authorization': `Bearer ${getIdToken()}`,
+      'Content-type': 'application/json'
     }
   }
 
-  static getHeaders () {
-    // return []
-    if (isLoggedIn()) {
-      return {
-        'Authorization': `Bearer ${getIdToken()}`
-      }
-    } else {
-      return []
+  static async get (endPoint, params = {}) {
+    const options = {
+      url: SERVER_URL + endPoint,
+      method: 'GET',
+      params,
+      headers: this.headers()
     }
+    const response = await axios(options)
+    return formatResponse(response)
   }
 
-  static get (endPoint, params = {}) {
-    const url = SERVER_URL + endPoint
-    const init = { ...this.init, method: 'GET', ...params }
-    return axios.get(url, init)
+  static async post (endPoint, data = {}) {
+    const options = {
+      url: SERVER_URL + endPoint,
+      method: 'POST',
+      data: formatData(data),
+      headers: this.headers()
+    }
+    const response = await axios(options)
+    return formatResponse(response)
   }
 
-  static post (endPoint, data = {}, timeout = 5000) {
-    const headers = { ...this.init.headers, 'Content-type': 'application/json' }
-    const url = SERVER_URL + endPoint
-    const init = { url, method: 'post', data, headers, timeout }
-    return axios(init)
+  static async put (endPoint, data = {}) {
+    const options = {
+      url: SERVER_URL + endPoint,
+      method: 'PUT',
+      data: formatData(data),
+      headers: this.headers()
+    }
+    const response = await axios(options)
+    return formatResponse(response)
   }
 }
-
-axios.interceptors.response.use((response) => {
-  return response
-}, (error) => {
-  // This error code is returned by axios if a timeout occurred.
-  if (error.code === 'ECONNABORTED') {
-    console.error(`A timeout happenned on following url: ${error.config.url}`)
-  } else {
-    throw error
-  }
-})
-
-API.init()
 
 export default API

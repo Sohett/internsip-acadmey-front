@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import * as c from './constants'
+import { userService } from './services'
 
 Vue.use(Vuex)
 
@@ -16,6 +17,10 @@ export default new Vuex.Store({
   actions: {
     setBecomeAdmin({ commit, dispatch }, data) {
       commit(c.SET_ADMIN, data)
+    },
+    getUserEmail () {
+      userService.index()
+        .then(res => console.log(res))
     }
   }
 })

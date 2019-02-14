@@ -8,8 +8,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "preproduction": "npm run build",
-    "production": "aws s3 cp dist/ s3://schooling.host --recursive --profile thomas",
-    "postproduction": "aws cloudfront create-invalidation --distribution-id E2LIQY7KS92PXV --paths '/*' --profile thomas"
+    "production": "aws s3 cp dist/ s3://schooling.host --recursive --profile thomas-thomas",
+    "postproduction": "aws cloudfront create-invalidation --distribution-id E2LIQY7KS92PXV --paths '/*' --profile thomas-sohet"
   },
   "dependencies": {
     "vue": "^2.5.21",
@@ -22,7 +22,9 @@
     "@fortawesome/vue-fontawesome": "^0.1.3",
     "auth0-js": "^9.8.2",
     "jwt-decode": "^2.2.0",
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "camelcase-keys": "^5.0.0",
+    "snakecase-keys": "^2.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",

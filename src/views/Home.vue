@@ -102,8 +102,9 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setBecomeAdmin']),
+    ...mapActions(['setBecomeAdmin', 'getUserEmail']),
     becomeAdmin() {
+      this.getUserEmail();
       this.setBecomeAdmin(!this.isAdmin)
     },
     createNewLearningTrajectory() {
