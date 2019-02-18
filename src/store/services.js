@@ -1,7 +1,7 @@
 import API from '@/services/api'
 
 export const learningTrajectoriesService = {
-  index (data) {
+  index () {
     return API.get('/learning-trajectories')
   },
   create (data) {

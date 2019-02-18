@@ -69,6 +69,9 @@ import dataSchool1 from '@/seraphinAcademyData.json'
 import dataSchool2 from '@/seraphinAcademyData2.json'
 
 export default {
+  mounted () {
+    this.getLearningTrajectories();
+  },
   components: {
     SummaryLearningTrajectory
   },
@@ -102,9 +105,8 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setBecomeAdmin', 'getUserEmail']),
+    ...mapActions(['setBecomeAdmin', 'getLearningTrajectories']),
     becomeAdmin() {
-      this.getUserEmail();
       this.setBecomeAdmin(!this.isAdmin)
     },
     createNewLearningTrajectory() {
