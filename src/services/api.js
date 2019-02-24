@@ -3,7 +3,7 @@ import snakeCaseKeys from 'snakecase-keys'
 import * as camelCaseKeys from 'camelcase-keys'
 import { getIdToken } from './auth'
 
-const SERVER_URL = 'https://api.schooling.host'
+const SERVER_URL = 'https://dev-api.schooling.host'
 
 const formatData = (data) => {
   return snakeCaseKeys(data)

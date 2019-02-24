@@ -1,8 +1,9 @@
 import API from '@/services/api'
 
 export const learningTrajectoriesService = {
-  index () {
-    return API.get('/learning-trajectories')
+  index (payload) {
+    const query = `?school_uuid=${payload}`
+    return API.get(`/learning-trajectories${query}`)
   },
   create (data) {
     return API.post('/wins', data)
@@ -15,7 +16,20 @@ export const learningTrajectoriesService = {
 }
 
 export const userService = {
-  index () {
-    return API.get('/me')
+  show () {
+    return API.get('/user')
+  }
+}
+
+export const schoolService = {
+  index (payload) {
+    const query = `?organization_uuid=${payload}`
+    return API.get(`/schools${query}`)
+  }
+}
+
+export const organizationService = {
+  show (payload) {
+    return API.get(`/organizations/${payload}`)
   }
 }

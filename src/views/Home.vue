@@ -4,15 +4,12 @@
     <el-tabs type="border-card">
       <el-tab-pane label="📓 Schools">
         <el-radio-group v-model="schoolLabel" style="margin-bottom: 20px;">
-          <el-radio-button v-for="school in schools" :label="school.label">
-            <span @click="changeData(school)">{{ school.name }}</span>
-          </el-radio-button>
-          <el-radio-button v-if="isAdmin">
-            <span @click="promptNewSchool" style="color: #51bd91"><i class="el-icon-circle-plus-outline"></i> Create New School</span>
+          <el-radio-button v-for="school in schools" :label="school.name">
           </el-radio-button>
         </el-radio-group>
         <el-container>
           <el-button v-if="isAdmin" size="small" style="margin-left: 10px; margin-bottom: 20px" @click="deleteSchool" type="danger" plain>Delete School <i class="el-icon-delete el-icon-right"></i></el-button>
+          <el-button v-if="isAdmin" size="small" style="margin-left: 10px; margin-bottom: 20px" @click="promptNewSchool" type="success" plain>Create New School <i class="el-icon-delete el-icon-right"></i></el-button>
         </el-container>
         <el-col :span="6" v-for="trajectory in data.learningTrajectories">
           <div class="grid-content bg-purple">
@@ -47,10 +44,7 @@
         </el-col>
       </el-tab-pane>
       <el-tab-pane label="🏛️ The company">
-        <p>Name: Seraphin SA</p>
-        <p>Employees: 20-25</p>
-        <p>Address: Rue des gens bien, 22. Bruxelles 1000, BELGIQUE</p>
-        <p>Business: Insurance</p>
+        <Company></Company>
       </el-tab-pane>
       <el-tab-pane label="⚙️ Preferences">
         <p>Plan: Free plan up to 50 users</p>
@@ -63,22 +57,28 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import SummaryLearningTrajectory from '@/components/SummaryLearningTrajectory.vue'
+import Company from '@/components/Company.vue'
 import dataSchool1 from '@/seraphinAcademyData.json'
 import dataSchool2 from '@/seraphinAcademyData2.json'
 
 export default {
   mounted () {
-    this.getLearningTrajectories();
+    this.setCurrentUserData();
   },
   components: {
-    SummaryLearningTrajectory
+    SummaryLearningTrajectory,
+    Company
   },
   props: ['trajectory'],
   computed: {
+    ...mapGetters(['getSchools']),
     isAdmin() {
       return this.$store.state.isAdmin
+    },
+    schools () {
+      return this.getSchools;
     }
   },
   data() {
@@ -90,7 +90,7 @@ export default {
       newBadges: [],
       schoolLabel: 'it',
       schoolName: '📓 IT School',
-      schools: [
+      schoolsOld: [
         {
           label: 'it',
           name: '📓 IT School',
@@ -105,7 +105,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setBecomeAdmin', 'getLearningTrajectories']),
+    ...mapActions(['setBecomeAdmin', 'setLearningTrajectories', 'setCurrentUserData', 'setSchools']),
     becomeAdmin() {
       this.setBecomeAdmin(!this.isAdmin)
     },
@@ -117,7 +117,7 @@ export default {
       this.newBadges.push({ name: this.newBadgeTitle });
       this.newBadgeTitle = ''
     },
-    changeData(school) {
+    changeSchool(school) {
       this.data = school.data
       this.schoolLabel = school.label
       this.schoolName = school.name
