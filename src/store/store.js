@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import * as c from './constants'
-import { userService, learningTrajectoriesService, schoolService, organizationService } from './services'
+import { userService, learningTrajectoriesService, schoolService, organizationService, badgesService } from './services'
 
 Vue.use(Vuex)
 
@@ -27,6 +27,9 @@ export default new Vuex.Store({
     },
     getLearningTrajectories (state) {
       return state.learningTrajectories;
+    },
+    getBadges (state) {
+      return state.badges
     }
   },
   mutations: {
@@ -50,6 +53,9 @@ export default new Vuex.Store({
     },
     [c.SET_ORGANIZATION] (state, payload) {
       state.organization = payload
+    },
+    [c.SET_BADGES] (state, payload) {
+      state.badges = payload
     }
   },
   actions: {
@@ -84,6 +90,15 @@ export default new Vuex.Store({
       setTimeout(()=>{
          commit(c.SET_LEARNING_TRAJECTORIES, learningTrajectories);
       },1000);
+
+    },
+    setBadges ({commit}, learningTrajectoryUuid) {
+      const badges = {};
+
+      badgesService.index(learningTrajectoryUuid)
+        .then(res => badges[learningTrajectoryUuid] = res)
+
+      commit(c.SET_BADGES, badges);
     }
   }
 })

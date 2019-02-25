@@ -7,9 +7,10 @@
         <i v-if="isAdmin" @click="editLearningPathTitle(trajectory)" class="el-icon-edit admin-edit admin-edit--primary"></i>
         <i v-if="isAdmin" @click="deleteLearningPath(trajectory)" class="el-icon-delete admin-edit admin-edit--danger"></i>
         <el-progress style="margin-top: 10px" :percentage="trajectory.progress"></el-progress>
+        <el-button @click="test">Fetch Badges</el-button>
       </div>
       <router-link class="no-decoration" :to="{ name: 'learningTrajectory', params: {id: trajectory.learningTrajectoryId } }">
-        <div v-for="badge in trajectory.badges" class="text item">
+        <div v-for="badge in badges" class="text item">
           <span>{{ `🏅 ${badge.name} ` }}</span><i v-if="badge.accomplished" class="el-icon-success"></i>
         </div>
       </router-link>
@@ -20,9 +21,10 @@
 </template>
 
 <script>
-import store from '@/store/store';
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  mounted () {},
   props: ['trajectory'],
   data() {
     return {
@@ -30,11 +32,19 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['getAdmin', 'getBadges']),
     isAdmin() {
-      return this.$store.state.isAdmin
+      return this.getAdmin;
+    },
+    badges() {
+      return this.getBadges;
     }
   },
   methods: {
+    ...mapActions(['setBadges']),
+    test () {
+      this.setBadges(this.trajectory.learningTrajectoryUuid);
+    },
     deleteLearningPath(trajectory){
       this.$confirm(`Are you sure you want to delete the \"${trajectory.name}\" and all its related \"Badges\" and \"Missions\"?`, 'Delete Learning Trajectory', {
         confirmButtonText: 'OK',
