@@ -17,13 +17,16 @@ export default new Vuex.Store({
   },
   getters: {
     getSchools (state) {
-      return state.schools
+      return state.schools;
     },
     getAdmin (state) {
-      return state.isAdmin
+      return state.isAdmin;
     },
     getOrganization (state) {
-      return state.organization
+      return state.organization;
+    },
+    getLearningTrajectories (state) {
+      return state.learningTrajectories;
     }
   },
   mutations: {
@@ -41,6 +44,9 @@ export default new Vuex.Store({
     },
     [c.SET_SCHOOLS] (state, payload) {
       state.schools = payload
+    },
+    [c.SET_CURRENT_SCHOOL] (state, payload) {
+      state.currentSchool = payload
     },
     [c.SET_ORGANIZATION] (state, payload) {
       state.organization = payload
