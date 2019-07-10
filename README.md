@@ -1,4 +1,5 @@
 # seraphinacademy-front
+See project here: app.schooling.host
 
 ## Project setup
 ```
