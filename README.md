@@ -1,6 +1,10 @@
 # seraphinacademy-front
 See project here: https://app.schooling.host
 
+![preview front page](https://thomas-sohet-public-images.s3.eu-central-1.amazonaws.com/Schooling.host+preview+front+page.png "preview web app front page")
+
+![preview badge page](https://thomas-sohet-public-images.s3.eu-central-1.amazonaws.com/Schooling.host+preview+badges+page.png "preview web app badge page")
+
 ## Project setup
 ```
 npm install
