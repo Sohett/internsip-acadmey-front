@@ -1,5 +1,5 @@
 # seraphinacademy-front
-Small VueJs project. The project: Create a Saas for tech startup that needs to speed up the learning of their new employees. The teachers create so called "Learning Trajectories", "badges" and "missions" for the employee to accomplish. Easy as it sounds, the project is still under creation. If you're interested, drop me an email at sohet.thomas@gmail.com I will be happy to help you solve the education problems you're facing within your compamy.
+Small VueJs project. The project: Create a Saas for tech startup that needs to speed up the learning of their new employees. The teachers create so called "Learning Trajectories", "badges" and "missions" for the employee to accomplish. Easy as it sounds, the project is still under creation. If you're interested, drop me an email at sohet.thomas@gmail.com I will be happy to help you solve the education problems you're facing within your company.
 
 See project here: https://app.schooling.host
 
