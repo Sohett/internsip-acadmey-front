@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Moment from 'vue-moment'
 import router from './router'
-import store from './store/store'
+import store from './store'
 import './plugins/element.js'
-
-Vue.config.productionTip = false
 
 new Vue({
   router,

@@ -1,0 +1,6 @@
+name: CI
+on:
+  pull_request:
+    types: review_requested
+jobs:
+  notification:

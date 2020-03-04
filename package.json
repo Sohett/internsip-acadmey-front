@@ -8,13 +8,14 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "preproduction": "npm run build",
-    "production": "aws s3 cp dist/ s3://schooling.host --recursive --profile thomas-thomas",
+    "production": "aws s3 cp dist/ s3://schooling.host --recursive --profile thomas-sohet",
     "postproduction": "aws cloudfront create-invalidation --distribution-id E2LIQY7KS92PXV --paths '/*' --profile thomas-sohet"
   },
   "dependencies": {
     "vue": "^2.5.21",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
+    "vue-moment": "^4.0.0",
     "element-ui": "^2.4.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.10",
     "@fortawesome/free-regular-svg-icons": "^5.6.1",
