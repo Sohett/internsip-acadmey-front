@@ -37,7 +37,7 @@
     methods: {
       onSubmit() {
         this.$message({
-          message: `Congrats, the Badge  ${this.badge.name} was successfuly created.`,
+          message: `Congrats, the Badge  ${this.badge.name} was successfuly created!`,
           type: 'success'
         });
       }
