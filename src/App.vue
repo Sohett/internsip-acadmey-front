@@ -16,9 +16,11 @@
   import AppMenu from './components/AppMenu'
   import AppFooter from './components/AppFooter'
   import Login from '@/components/Login'
+  import { createNamespacedHelpers } from 'vuex'
+  const { mapActions } = createNamespacedHelpers('initializer')
 
   export default {
-  name: 'app',
+  name: 'App',
   components: {
     AppMenu,
     AppFooter,
@@ -28,6 +30,12 @@
     displayLoginPage () {
       return (this.$route.name !== 'Callback' && !isLoggedIn())
     }
+  },
+  methods: {
+    ...mapActions(['initializeApp'])
+  },
+  mounted () {
+    this.initializeApp()
   }
 }
 </script>

@@ -4,7 +4,7 @@
     <p>Employees: {{ organization.numberOfEmployee }}</p>
     <p>Adresse : {{ organization.address }}</p>
     <p>Status Légal: {{ organization.legalStatus }}</p>
-    <p>Ouverture du compte: {{ organization.createdAt }}</p>
+    <p>Ouverture du compte: {{ organization.createdAt | moment("DD/MM/YYY") }}</p>
   </div>
 </template>
 
